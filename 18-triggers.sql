@@ -30,6 +30,7 @@ BEGIN
     end if;
 end;
 /
+
 -- Se ejecuta la validación antes de insertar, actualizar o borrar en la tabla producto
 -- Si salta una exception no completa la operación 
 CREATE OR REPLACE TRIGGER validacion_producto
@@ -47,11 +48,10 @@ BEGIN
     FROM producto
     where codigo = :new.codigo_fabricante;
     
-    --Si no hay fabricante, lanza un error
+       -- si no hay fabricantes, lanzamos excepcion
     if v_num_fabricantes = 0 then
-        RAISE_APPLICATION_ERROR(-20002, 'El fabricante no existe');
-    end if;
-    
+        RAISE_APPLICATION_ERROR(-20002, 'No existe el fabricante');
+    end if;    
 end;
 /
 
@@ -59,4 +59,19 @@ end;
 INSERT INTO producto(codigo, nombre, precio, codigo_fabricante)
 values(12,'Nuevo producto', 100,1);
 
-delete from producto
+--Elmina un producto en especifico
+DELETE FROM producto where codigo = 12;
+SELECT * FROM producto;
+SELECT * FROM fabricante;
+SELECT * FROM fabricante WHERE codigo = 5;
+
+
+-- Comprobamos si esta activado el trigger
+SELECT trigger_name, status
+FROM user_triggers
+WHERE trigger_name = 'VALIDACION_PRODUCTO';
+
+-- Cambia el status del trigger
+ALTER TRIGGER validacion_producto enable;
+
+
