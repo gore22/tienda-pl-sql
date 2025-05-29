@@ -1,4 +1,8 @@
--- Creación deprocedimiento 
+-- Creación de procedimiento 
+/*
+ Conjunto de instrucciones que se guarda en la base de datos y que
+ puedes ejecutar cuando lo necesites
+*/
 CREATE OR REPLACE PROCEDURE infoProducto(p_codigo producto.codigo%type)
 as
     v_producto producto%rowtype;

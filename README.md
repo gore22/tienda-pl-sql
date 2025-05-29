@@ -10,37 +10,39 @@ Este repositorio contiene ejercicios prácticos de **PL/SQL** diseñados para ap
 
 A lo largo del repositorio encontrarás ejemplos organizados en distintos scripts que cubren desde estructuras básicas hasta funcionalidades avanzadas de PL/SQL:
 
-- **Estructuras de control:**
-  - `01.if_elsif_else`
-  - `02.case`
-  - `03.bucles`
+### **Estructuras de control:**
+- `01.if_elsif_else`
+- `02.case`
+- `03.bucles`
 
-- **Tipos de colecciones y select:**
-  - `04.varray`
-  - `05.select_into`
-  - `06.into_type`
-  - `07.into_row`
-  - `08.into_rowtype`
+### **Tipos de colecciones y SELECT:**
+- `04.varray`
+- `05.select_into`
+- `06.into_type`
+- `07.into_row`
+- `08.into_rowtype`
 
-- **Consultas y uniones:**
-  - `09.inner_join`
+### **Consultas, uniones e índices:**
+- `09.inner_join`
+- `10.view` (consultas complejas encapsuladas como vistas)
+- `11.index` (creación de índices para mejorar el rendimiento)
 
-- **Gestión de excepciones:**
-  - `10.exception_propias` (con `RAISE`)
-  - `11.exception_aplicacion` (con `RAISE_APPLICATION_ERROR`)
+### **Gestión de excepciones:**
+- `12.exception_propias` (con `RAISE`)
+- `13.exception_aplicacion` (con `RAISE_APPLICATION_ERROR`)
 
-- **Subprogramas:**
-  - `12.procedimiento`
-  - `13.funcion`
-  - `14.package`
+### **Subprogramas:**
+- `14.procedimiento`
+- `15.funcion`
+- `16.package`
 
-- **Cursores:**
-  - `15.cursor_1_tabla`
-  - `16.cursor_2_tablas`
-  - `17.cursor_con_parametros`
+### **Cursores:**
+- `17.cursor_1_tabla`
+- `18.cursor_2_tablas`
+- `19.cursor_con_parametros`
 
-- **Triggers:**
-  - `18.triggers` (validaciones, auditoría de operaciones, etc.)
+### **Triggers:**
+- `20.triggers` (validaciones, auditoría de operaciones, etc.)
 
 ---
 

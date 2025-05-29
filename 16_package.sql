@@ -1,6 +1,10 @@
 DROP PROCEDURE infoProducto;
 DROP FUNCTION obtenerProducto;
 
+/*
+    Package es un contenedor que agrupa funciones, procedimientos, variables y excepciones 
+    relacionadas, facilitando la organización y reutilización del código.
+*/
 -- Crear paquete
 CREATE OR REPLACE PACKAGE productos AS
     PROCEDURE infoProducto(p_codigo producto.codigo%TYPE);

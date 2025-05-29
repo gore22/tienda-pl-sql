@@ -1,9 +1,9 @@
--- Cursor con parametros
+-- Cursor con párametros
 declare
     --Declaración del cursor
     CURSOR c_productos_fabricante (p_cod_fab NUMBER) is
     SELECT * 
-    from producto
+    FROM producto
     WHERE codigo_fabricante = p_cod_fab
     ORDER by precio;
     
@@ -30,11 +30,12 @@ BEGIN
     end loop;
     --Cerramos el cursor 
     close c_productos_fabricante;
-    --Si no se encontró ningún producto mostramos mensaje 
+    --Si no se encontró ningún producto mostramos un mensaje 
     if v_count = 0 then 
         DBMS_OUTPUT.PUT_LINE('No se encontro producto con el codigo '|| v_codigo_fabricante);
     end if;
 EXCEPTION
     when others then
         DBMS_OUTPUT.PUT_LINE('Error');
-end; 
+end;
+--SELECT * FROM producto;

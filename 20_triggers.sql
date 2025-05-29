@@ -1,4 +1,4 @@
---Se ejecuta antes de insertar, actualizar y borrar en la tabla producto
+--Trigger que se ejecuta antes de insertar, actualizar y borrar en la tabla producto
 CREATE OR REPLACE TRIGGER estado_operacion_before
 BEFORE insert OR UPDATE or DELETE on producto
 BEGIN
@@ -14,7 +14,7 @@ BEGIN
     end if;
 end;
 /
--- Se ejecuta despues de insetar, actualizar o borrar un producto
+-- Se ejecuta después de insetar, actualizar o borrar en la tabla Producto
 CREATE OR REPLACE TRIGGER estado_operacion_after
 AFTER insert or UPDATE or DELETE on producto
 BEGIN
@@ -48,7 +48,7 @@ BEGIN
     FROM producto
     where codigo = :new.codigo_fabricante;
     
-       -- si no hay fabricantes, lanzamos excepcion
+       -- Si no hay fabricantes, lanzamos excepción
     if v_num_fabricantes = 0 then
         RAISE_APPLICATION_ERROR(-20002, 'No existe el fabricante');
     end if;    
@@ -59,14 +59,14 @@ end;
 INSERT INTO producto(codigo, nombre, precio, codigo_fabricante)
 values(12,'Nuevo producto', 100,1);
 
---Elmina un producto en especifico
+--Elimina un producto en especifico
 DELETE FROM producto where codigo = 12;
 SELECT * FROM producto;
 SELECT * FROM fabricante;
 SELECT * FROM fabricante WHERE codigo = 5;
 
 
--- Comprobamos si esta activado el trigger
+-- Comprobamos si está activado el trigger
 SELECT trigger_name, status
 FROM user_triggers
 WHERE trigger_name = 'VALIDACION_PRODUCTO';

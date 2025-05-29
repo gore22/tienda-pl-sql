@@ -1,5 +1,4 @@
 -- Cursores permite recorrer y almacenar un conjunto de datos explícitos 
-
 DECLARE
     -- Creo un curso
     CURSOR c_productos_fabricante is
@@ -8,8 +7,9 @@ DECLARE
         p.nombre,
         p.precio,
         f.nombre as nombre_fabricante
-    from producto p, fabricante f
-    where p.codigo_fabricante = f.codigo
+    from producto p
+    JOIN fabricante f 
+    ON p.codigo_fabricante = f.codigo
     ORDER by precio DESC;
         
 BEGIN

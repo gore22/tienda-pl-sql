@@ -1,5 +1,5 @@
 DECLARE
-    --Declaro las variables
+    -- Variables para contar productos y sumar precios
     v_total NUMBER(8);
     v_sumar_precio NUMBER(8,2);
 BEGIN
